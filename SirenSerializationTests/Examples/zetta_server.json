@@ -1,0 +1,477 @@
+{
+  "class": [
+    "server"
+  ],
+  "properties": {
+    "name": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+  },
+  "entities": [
+    {
+      "class": [
+        "device",
+        "service"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "channel": "live",
+        "url": "http://127.0.0.1",
+        "frequency": 5,
+        "version": "v0.2.0_25",
+        "target": "athena",
+        "distro": "acme",
+        "id": "d0fd54b1-ab3a-42e1-8292-ed9c1c80dd87",
+        "name": "software-update",
+        "type": "service",
+        "state": "ready"
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/d0fd54b1-ab3a-42e1-8292-ed9c1c80dd87"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/service"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    },
+    {
+      "class": [
+        "device",
+        "service"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "id": "3c9b03c2-6bda-4b5a-a83c-22ab5531a390",
+        "name": "node-red",
+        "type": "service"
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/3c9b03c2-6bda-4b5a-a83c-22ab5531a390"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/service"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    },
+    {
+      "class": [
+        "device",
+        "service"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "id": "6001bace-d19a-42f4-bf10-85286c8b7781",
+        "name": "zigbee",
+        "type": "service",
+        "stdout": "Checking for devices pending recovery...\r\nrecovery already active, waiting\n",
+        "state": "ready"
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/6001bace-d19a-42f4-bf10-85286c8b7781"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/service"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    },
+    {
+      "class": [
+        "device",
+        "contact"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "id": "2fc2bbca-c73b-40e4-a9e2-16c389f41045",
+        "phyType": "zigbee",
+        "phyId": "000D6F00032A01A8.1",
+        "state": "initializing",
+        "status": null,
+        "name": null,
+        "type": "contact"
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/2fc2bbca-c73b-40e4-a9e2-16c389f41045"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/contact"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    },
+    {
+      "class": [
+        "device",
+        "light"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "id": "0186fe42-b6fa-4bf3-bd80-38fb727616fc",
+        "phyType": "zigbee",
+        "phyId": "000D6F000563B1C9.1",
+        "state": "ready",
+        "onOff": "On",
+        "name": null,
+        "type": "light",
+        "zigbeeFirmware": "302010384",
+        "activePower": "1.3",
+        "voltage": "121.0",
+        "current": "0.086",
+        "rawPacket": {
+          "profileId": 260,
+          "clusterId": 2820,
+          "payload": "CEIKBQUheQA="
+        }
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/0186fe42-b6fa-4bf3-bd80-38fb727616fc"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/light"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    },
+    {
+      "class": [
+        "device",
+        "water"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "id": "7e1c3a00-4aa8-44c3-b0b6-475fcc0851f3",
+        "phyType": "zigbee",
+        "phyId": "000D6F00054219E1.1",
+        "state": "initializing",
+        "status": null,
+        "type": "water"
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/7e1c3a00-4aa8-44c3-b0b6-475fcc0851f3"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/water"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    },
+    {
+      "class": [
+        "device",
+        "thermostat"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "id": "9b8eaf86-2ac1-443d-9a32-6b5d15d88b8a",
+        "phyType": "zigbee",
+        "phyId": "000D6F000A944DDE.1",
+        "state": "ready",
+        "currentTemperature": "24.27",
+        "coolingSetpoint": "8.33",
+        "heatingSetpoint": "25.55",
+        "mode": "Cool",
+        "type": "thermostat",
+        "zigbeeFirmware": "50548752",
+        "activeMode": "Idle",
+        "fanMode": "Auto",
+        "relayState": "Cool,Fan,2nd Stage Cool",
+        "batteryVoltage": "2.7",
+        "rawPacket": {
+          "profileId": 260,
+          "clusterId": 513,
+          "payload": "CEQKAAApewk="
+        }
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/9b8eaf86-2ac1-443d-9a32-6b5d15d88b8a"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/thermostat"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    },
+    {
+      "class": [
+        "device",
+        "occupancy"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "id": "c2305da1-1a77-4928-9569-7bb9c13ed9b0",
+        "phyType": "zigbee",
+        "phyId": "000D6F0003C0118F.1",
+        "state": "initializing",
+        "type": "occupancy"
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/c2305da1-1a77-4928-9569-7bb9c13ed9b0"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/occupancy"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    },
+    {
+      "class": [
+        "device",
+        "light"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "id": "baebac14-9449-42b2-868d-f6f65d922064",
+        "phyType": "zigbee",
+        "phyId": "0022A300000FB86F.1",
+        "state": "initializing",
+        "onOff": null,
+        "type": "light"
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/baebac14-9449-42b2-868d-f6f65d922064"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/light"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    },
+    {
+      "class": [
+        "device",
+        "light"
+      ],
+      "rel": [
+        "http://rels.zettajs.io/device"
+      ],
+      "properties": {
+        "id": "d8a3d4a5-2652-4527-b0e4-afe38ea119fc",
+        "phyType": "zigbee",
+        "phyId": "000D6F0002F809E2.1",
+        "state": "initializing",
+        "onOff": null,
+        "type": "light"
+      },
+      "links": [
+        {
+          "rel": [
+            "self",
+            "edit"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/devices/d8a3d4a5-2652-4527-b0e4-afe38ea119fc"
+        },
+        {
+          "rel": [
+            "http://rels.zettajs.io/type",
+            "describedby"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta/light"
+        },
+        {
+          "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+          "rel": [
+            "up",
+            "http://rels.zettajs.io/server"
+          ],
+          "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "query-devices",
+      "method": "GET",
+      "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+      "type": "application/x-www-form-urlencoded",
+      "fields": [
+        {
+          "name": "ql",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+    },
+    {
+      "rel": [
+        "http://rels.zettajs.io/metadata"
+      ],
+      "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/meta"
+    },
+    {
+      "rel": [
+        "monitor"
+      ],
+      "href": "wss://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39/events?topic=logs"
+    }
+  ]
+}

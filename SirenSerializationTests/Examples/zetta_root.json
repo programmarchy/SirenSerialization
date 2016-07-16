@@ -1,0 +1,59 @@
+{
+  "class": [
+    "root"
+  ],
+  "links": [
+    {
+      "rel": [
+        "self"
+      ],
+      "href": "https://api.zettajs.io/v1/"
+    },
+    {
+      "rel": [
+        "http://rels.zettajs.io/peer-management"
+      ],
+      "href": "https://api.zettajs.io/v1/peer-management"
+    },
+    {
+      "rel": [
+        "http://rels.zettajs.io/events"
+      ],
+      "href": "wss://api.zettajs.io/v1/events"
+    },
+    {
+      "title": "8efe0791-be55-4097-842a-0383d9816f90",
+      "rel": [
+        "http://rels.zettajs.io/peer",
+        "http://rels.zettajs.io/server"
+      ],
+      "href": "https://api.zettajs.io/v1/servers/8efe0791-be55-4097-842a-0383d9816f90"
+    },
+    {
+      "title": "b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39",
+      "rel": [
+        "http://rels.zettajs.io/peer",
+        "http://rels.zettajs.io/server"
+      ],
+      "href": "https://api.zettajs.io/v1/servers/b51eea98-3de4-4dfa-97fe-4f0d6ec2dd39"
+    }
+  ],
+  "actions": [
+    {
+      "name": "query-devices",
+      "method": "GET",
+      "href": "https://api.zettajs.io/v1/",
+      "type": "application/x-www-form-urlencoded",
+      "fields": [
+        {
+          "name": "server",
+          "type": "text"
+        },
+        {
+          "name": "ql",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

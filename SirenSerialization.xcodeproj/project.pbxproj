@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40421FD21D3AE306003CE2BB /* zetta_root.json in Resources */ = {isa = PBXBuildFile; fileRef = 40421FD11D3AE306003CE2BB /* zetta_root.json */; };
+		40421FD41D3AE579003CE2BB /* zetta_server.json in Resources */ = {isa = PBXBuildFile; fileRef = 40421FD31D3AE579003CE2BB /* zetta_server.json */; };
 		404B36841D3AA21800E43C05 /* SirenSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 404B36831D3AA21800E43C05 /* SirenSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		404B368B1D3AA21800E43C05 /* SirenSerialization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404B36801D3AA21800E43C05 /* SirenSerialization.framework */; };
 		404B36901D3AA21800E43C05 /* SirenSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B368F1D3AA21800E43C05 /* SirenSerializationTests.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40421FD11D3AE306003CE2BB /* zetta_root.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zetta_root.json; path = Examples/zetta_root.json; sourceTree = "<group>"; };
+		40421FD31D3AE579003CE2BB /* zetta_server.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = zetta_server.json; path = Examples/zetta_server.json; sourceTree = "<group>"; };
 		404B36801D3AA21800E43C05 /* SirenSerialization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SirenSerialization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		404B36831D3AA21800E43C05 /* SirenSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SirenSerialization.h; sourceTree = "<group>"; };
 		404B36851D3AA21800E43C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,7 +38,7 @@
 		404B36911D3AA21800E43C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40AF26471D3AA5B4002DF879 /* SirenSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SirenSerialization.swift; sourceTree = "<group>"; };
 		40AF26491D3AB194002DF879 /* SirenSpecification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SirenSpecification.swift; sourceTree = "<group>"; };
-		40AF264C1D3ABC7C002DF879 /* order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = order.json; sourceTree = "<group>"; };
+		40AF264C1D3ABC7C002DF879 /* order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = order.json; path = Examples/order.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				40AF264C1D3ABC7C002DF879 /* order.json */,
+				40421FD11D3AE306003CE2BB /* zetta_root.json */,
+				40421FD31D3AE579003CE2BB /* zetta_server.json */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -201,7 +207,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40421FD21D3AE306003CE2BB /* zetta_root.json in Resources */,
 				40AF264D1D3ABC7C002DF879 /* order.json in Resources */,
+				40421FD41D3AE579003CE2BB /* zetta_server.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

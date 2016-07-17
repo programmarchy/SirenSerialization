@@ -1,5 +1,5 @@
 //
-//  SirenSerialization.swift
+//  JSONSirenSerialization.swift
 //  SirenSerialization
 //
 //  Created by Donald Ness on 7/16/16.

@@ -12,7 +12,7 @@
 		404B36841D3AA21800E43C05 /* SirenSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 404B36831D3AA21800E43C05 /* SirenSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		404B368B1D3AA21800E43C05 /* SirenSerialization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404B36801D3AA21800E43C05 /* SirenSerialization.framework */; };
 		404B36901D3AA21800E43C05 /* SirenSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B368F1D3AA21800E43C05 /* SirenSerializationTests.swift */; };
-		40AF26481D3AA5B4002DF879 /* SirenSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AF26471D3AA5B4002DF879 /* SirenSerialization.swift */; };
+		40AF26481D3AA5B4002DF879 /* JSONSirenSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AF26471D3AA5B4002DF879 /* JSONSirenSerialization.swift */; };
 		40AF264D1D3ABC7C002DF879 /* order.json in Resources */ = {isa = PBXBuildFile; fileRef = 40AF264C1D3ABC7C002DF879 /* order.json */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +35,7 @@
 		404B368A1D3AA21800E43C05 /* SirenSerializationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SirenSerializationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		404B368F1D3AA21800E43C05 /* SirenSerializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SirenSerializationTests.swift; sourceTree = "<group>"; };
 		404B36911D3AA21800E43C05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		40AF26471D3AA5B4002DF879 /* SirenSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SirenSerialization.swift; sourceTree = "<group>"; };
+		40AF26471D3AA5B4002DF879 /* JSONSirenSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSirenSerialization.swift; sourceTree = "<group>"; };
 		40AF264C1D3ABC7C002DF879 /* order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = order.json; path = Examples/order.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				404B36831D3AA21800E43C05 /* SirenSerialization.h */,
-				40AF26471D3AA5B4002DF879 /* SirenSerialization.swift */,
+				40AF26471D3AA5B4002DF879 /* JSONSirenSerialization.swift */,
 				404B36851D3AA21800E43C05 /* Info.plist */,
 			);
 			path = SirenSerialization;
@@ -217,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40AF26481D3AA5B4002DF879 /* SirenSerialization.swift in Sources */,
+				40AF26481D3AA5B4002DF879 /* JSONSirenSerialization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

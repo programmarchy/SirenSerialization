@@ -19,3 +19,6 @@ xcuserdata
 !xcshareddata
 !xcschemes
 
+## Carthage
+
+Carthage/

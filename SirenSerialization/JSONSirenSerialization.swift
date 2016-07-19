@@ -8,7 +8,13 @@
 
 import Foundation
 
-public typealias JSONSiren = JSONSirenSerialization.Entity
+public typealias JSONSiren = JSONSirenEntity
+public typealias JSONSirenEntity = JSONSirenSerialization.Entity
+public typealias JSONSirenSubEntity = JSONSirenSerialization.SubEntity
+public typealias JSONSirenEmbeddedEntity = JSONSirenSerialization.EmbeddedEntity
+public typealias JSONSirenLink = JSONSirenSerialization.Link
+public typealias JSONSirenAction = JSONSirenSerialization.Action
+public typealias JSONSirenField = JSONSirenSerialization.Field
 
 public class JSONSirenSerialization {
 

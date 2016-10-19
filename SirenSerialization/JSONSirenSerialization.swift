@@ -44,8 +44,8 @@ public class JSONSirenSerialization {
     
     public struct Link {
         public let rel: [String]
-        public let hrefURL: NSURL
-        public var href: String { return hrefURL.absoluteString }
+        public let hrefURL: URL
+        public var href: String? { return hrefURL.absoluteString }
         public let classNames: [String]?
         public let title: String?
         public let type: String?
@@ -53,8 +53,8 @@ public class JSONSirenSerialization {
     
     public struct Action {
         public let name: String
-        public let hrefURL: NSURL
-        public var href: String { return hrefURL.absoluteString }
+        public let hrefURL: URL
+        public var href: String? { return hrefURL.absoluteString }
         public let method: String
         public let classNames: [String]?
         public let title: String?
@@ -70,7 +70,7 @@ public class JSONSirenSerialization {
         public let title: String?
     }
 
-    public enum Error: ErrorType {
+    public enum ParseError: Error {
         case invalidJSONObject
         case missingSubEntityRel
         case missingEmbeddedLinkRel
@@ -84,29 +84,29 @@ public class JSONSirenSerialization {
     
     // MARK: Parse
 
-    public class func JSONSirenValueWithData(data: NSData) throws -> JSONSiren {
-        return try parse(try NSJSONSerialization.JSONObjectWithData(data, options: []))
+    public class func jsonSirenValue(with data: Data) throws -> JSONSiren {
+        return try parse(JSON: try JSONSerialization.jsonObject(with: data, options: []))
     }
     
-    static func parse(JSON: AnyObject) throws -> JSONSiren {
+    static func parse(JSON: Any) throws -> JSONSiren {
         guard let JSON = JSON as? [String: AnyObject] else {
-            throw Error.invalidJSONObject
+            throw ParseError.invalidJSONObject
         }
-        return try parseEntity(JSON)
+        return try parseEntity(JSON: JSON)
     }
     
     static func parseEntity(JSON: [String: AnyObject]) throws -> Entity {
         let classNames = JSON["class"] as? [String]
         let properties = JSON["properties"] as? [String: AnyObject]
-        let entities = try parseSubEntities(JSON["entities"] as? [[String: AnyObject]])
-        let links = try parseLinks(JSON["links"] as? [[String: AnyObject]])
-        let actions = try parseActions(JSON["actions"] as? [[String: AnyObject]])
+        let entities = try parseSubEntities(JSON: JSON["entities"] as? [[String: AnyObject]])
+        let links = try parseLinks(JSON: JSON["links"] as? [[String: AnyObject]])
+        let actions = try parseActions(JSON: JSON["actions"] as? [[String: AnyObject]])
         let title = JSON["title"] as? String
         return Entity(classNames: classNames, properties: properties, entities: entities, links: links, actions: actions, title: title)
     }
     
     static func parseSubEntities(JSON: [[String: AnyObject]]?) throws -> [SubEntity]? {
-        return try JSON?.flatMap { try parseSubEntity($0) }
+        return try JSON?.flatMap { try parseSubEntity(JSON: $0) }
     }
     
     static func parseSubEntity(JSON: [String: AnyObject]?) throws -> SubEntity? {
@@ -117,19 +117,17 @@ public class JSONSirenSerialization {
             return SubEntity.embeddedLink(try parseLink(required: JSON))
         }
         else {
-            return SubEntity.embeddedEntity(try parseEmbeddedEntity(JSON))
+            return SubEntity.embeddedEntity(try parseEmbeddedEntity(JSON: JSON))
         }
     }
     
     static func parseEmbeddedEntity(JSON: [String: AnyObject]) throws -> EmbeddedEntity {
-        guard let rel = JSON["rel"] as? [String] else {
-            throw Error.missingSubEntityRel
-        }
+        let rel = JSON["rel"] as? [String] ?? [String]()
         let classNames = JSON["class"] as? [String]
         let properties = JSON["properties"] as? [String: AnyObject]
-        let entities = try parseSubEntities(JSON["entities"] as? [[String: AnyObject]])
-        let links = try parseLinks(JSON["links"] as? [[String: AnyObject]])
-        let actions = try parseActions(JSON["actions"] as? [[String: AnyObject]])
+        let entities = try parseSubEntities(JSON: JSON["entities"] as? [[String: AnyObject]])
+        let links = try parseLinks(JSON: JSON["links"] as? [[String: AnyObject]])
+        let actions = try parseActions(JSON: JSON["actions"] as? [[String: AnyObject]])
         let title = JSON["title"] as? String
         return EmbeddedEntity(rel: rel, classNames: classNames, properties: properties, entities: entities, links: links, actions: actions, title: title)
     }
@@ -147,13 +145,13 @@ public class JSONSirenSerialization {
     
     static func parseLink(required JSON: [String: AnyObject]) throws -> Link {
         guard let rel = JSON["rel"] as? [String] else {
-            throw Error.missingEmbeddedLinkRel
+            throw ParseError.missingEmbeddedLinkRel
         }
         guard let href = JSON["href"] as? String else {
-            throw Error.missingEmbeddedLinkHref
+            throw ParseError.missingEmbeddedLinkHref
         }
-        guard let hrefURL = NSURL(string: href) else {
-            throw Error.invalidEmbeddedLinkHref(href)
+        guard let hrefURL = URL(string: href) else {
+            throw ParseError.invalidEmbeddedLinkHref(href)
         }
         let classNames = JSON["class"] as? [String]
         let title = JSON["title"] as? String
@@ -174,19 +172,19 @@ public class JSONSirenSerialization {
     
     static func parseAction(required JSON: [String: AnyObject]) throws -> Action {
         guard let name = JSON["name"] as? String else {
-            throw Error.missingActionName
+            throw ParseError.missingActionName
         }
         guard let href = JSON["href"] as? String else {
-            throw Error.missingActionHref
+            throw ParseError.missingActionHref
         }
-        guard let hrefURL = NSURL(string: href) else {
-            throw Error.invalidActionHref(href)
+        guard let hrefURL = URL(string: href) else {
+            throw ParseError.invalidActionHref(href)
         }
         let method = JSON["method"] as? String ?? "GET"
         let classNames = JSON["class"] as? [String]
         let title = JSON["title"] as? String
         let type = JSON["type"] as? String
-        let fields = try parseFields(JSON["fields"] as? [[String: AnyObject]])
+        let fields = try parseFields(JSON: JSON["fields"] as? [[String: AnyObject]])
         return Action(name: name, hrefURL: hrefURL, method: method, classNames: classNames, title: title, type: type, fields: fields)
     }
     
@@ -203,19 +201,13 @@ public class JSONSirenSerialization {
     
     static func parseField(required JSON: [String: AnyObject]) throws -> Field {
         guard let name = JSON["name"] as? String else {
-            throw Error.missingFieldName
+            throw ParseError.missingFieldName
         }
         let type = JSON["type"] as? String ?? "text"
         let classNames = JSON["class"] as? [String]
         let value = JSON["value"]
         let title = JSON["title"] as? String
         return Field(name: name, type: type, classNames: classNames, value: value, title: title)
-    }
-    
-    // MARK: Serialize
-    
-    public class func dataWithJSONSirenValue(value: JSONSiren, options opt: NSJSONWritingOptions) throws -> NSData {
-        return NSData()
     }
 
 }

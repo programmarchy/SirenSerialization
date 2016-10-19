@@ -12,29 +12,29 @@ import XCTest
 class SirenSerializationTests: XCTestCase {
 
     struct Examples {
-        static var orderData: NSData {
-            return readFile("order", ofType: "json")
+        static var orderData: Data {
+            return readFile(name: "order", withExtension: "json")
         }
         
-        static var zettaRootData: NSData {
-            return readFile("zetta_root", ofType: "json")
+        static var zettaRootData: Data {
+            return readFile(name: "zetta_root", withExtension: "json")
         }
         
-        static var zettaServerData: NSData {
-            return readFile("zetta_server", ofType: "json")
+        static var zettaServerData: Data {
+            return readFile(name: "zetta_server", withExtension: "json")
         }
         
-        static func readFile(name: String, ofType type: String?) -> NSData {
-            let bundle = NSBundle(forClass: SirenSerializationTests.self)
-            let path = bundle.pathForResource(name, ofType: type)!
-            return NSData(contentsOfFile: path)!
+        static func readFile(name: String, withExtension ext: String?) -> Data {
+            let bundle = Bundle(for: SirenSerializationTests.self)
+            let url = bundle.url(forResource: name, withExtension: ext)!
+            return try! Data(contentsOf: url)
         }
     }
     
     func testParseOrder() {
         do {
             let data = Examples.orderData
-            let root = try JSONSirenSerialization.JSONSirenValueWithData(data)
+            let root = try JSONSirenSerialization.jsonSirenValue(with: data)
             
             guard let classNames = root.classNames else {
                 XCTFail("has a class")
@@ -156,7 +156,7 @@ class SirenSerializationTests: XCTestCase {
     func testParseZettaRoot() {
         do {
             let data = Examples.zettaRootData
-            let root = try JSONSirenSerialization.JSONSirenValueWithData(data)
+            let root = try JSONSirenSerialization.jsonSirenValue(with: data)
             
             guard let classNames = root.classNames else {
                 XCTFail("has a class")
@@ -224,7 +224,7 @@ class SirenSerializationTests: XCTestCase {
     func testParseZettaServer() {
         do {
             let data = Examples.zettaServerData
-            let root = try JSONSirenSerialization.JSONSirenValueWithData(data)
+            let root = try JSONSirenSerialization.jsonSirenValue(with: data)
             
             guard let classNames = root.classNames else {
                 XCTFail("has a class")
